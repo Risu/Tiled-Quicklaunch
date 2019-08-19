@@ -3,7 +3,7 @@ Name=Tiled Quicklaunch
 Comment=
 
 Type=Service
-Icon=kde-here-start
+Icon=org.kde.plasma.quicklaunch
 X-KDE-ServiceTypes=Plasma/Applet
 
 X-Plasma-API=declarativeappletscript
@@ -13,9 +13,7 @@ X-KDE-PluginInfo-Author=
 X-KDE-PluginInfo-Email=piotr4@gmail.com
 X-KDE-PluginInfo-Name=risu.tiled.quicklaunch
 X-KDE-PluginInfo-Version=1(30)
-X-KDE-PluginInfo-Website=
-#X-KDE-PluginInfo-KdeStoreId=
+X-KDE-PluginInfo-Website=https://store.kde.org/p/1319588/
+X-KDE-PluginInfo-KdeStoreId=1319588
 X-KDE-PluginInfo-Category=Application Launchers
 X-KDE-PluginInfo-Depends=
-
-#X-Plasma-Provides=org.kde.plasma.launchermenu
