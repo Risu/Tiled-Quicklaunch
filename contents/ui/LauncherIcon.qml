@@ -59,7 +59,7 @@ MouseArea {
 		anchors.centerIn: parent
 		//source: "start-here-kde"
 		//width: launcherIcon.iconSize
-		//height: launcherIcon.iconSize
+		height: launcherIcon.iconSize
 		active: launcherIcon.containsMouse
 		smooth: true
 	}
