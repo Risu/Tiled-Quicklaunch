@@ -53,6 +53,7 @@ MouseArea {
 	property int iconSize: Math.min(width, height)
 	property alias iconSource: icon.source
 
+	
 	PlasmaCore.IconItem {
 		id: icon
 		anchors.centerIn: parent
