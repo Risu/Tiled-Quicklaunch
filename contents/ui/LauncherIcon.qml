@@ -73,7 +73,7 @@ MouseArea {
 	// cursorShape: Qt.PointingHandCursor
 
 	onClicked: {
-		plasmoid.expanded = !plasmoid.expanded
+		popup.visible = !popup.visible
 	}
 
 	property alias activateOnDrag: dropArea.enabled
@@ -95,6 +95,6 @@ MouseArea {
 	Timer {
 		id: dragHoverTimer
 		interval: 250 // Same as taskmanager's activationTimer in MouseHandler.qml
-		onTriggered: plasmoid.expanded = true
+		onTriggered: popup.visible = true
 	}
 }

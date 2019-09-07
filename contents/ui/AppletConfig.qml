@@ -46,8 +46,8 @@ Item {
 		if (plasmoid.configuration.fullscreen) {
 			return Screen.desktopAvailableWidth
 		} else {
-			return leftSectionWidth + tileGridWidth
-			//return plasmoid.configuration.popupWidth * units.devicePixelRatio
+			//return leftSectionWidth + tileGridWidth
+			return plasmoid.configuration.popupWidth * units.devicePixelRatio
 		}
 	}
 	readonly property int popupHeight: {

@@ -7,10 +7,14 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 MouseArea {
+    
     property alias tileEditorView: tileEditorViewLoader.item
 	property alias tileEditorViewLoader: tileEditorViewLoader
 	property alias tileGrid: tileGrid
 
+    width: config.popupWidth;
+    height: config.popupHeight;
+	
 	RowLayout {
 		anchors.fill: parent
 		spacing: 0
@@ -95,6 +99,64 @@ MouseArea {
 			subText: i18n("Alt + Right Click to resize the menu.")
 		}
 	}
-
-	//onClicked: searchView.searchField.forceActiveFocus()
+	
+	MouseArea {
+        visible: !plasmoid.configuration.tilesLocked && !(plasmoid.location == PlasmaCore.Types.TopEdge || plasmoid.location == PlasmaCore.Types.LeftEdge)
+        anchors.top: parent.top
+        anchors.left: parent.left
+        width: units.largeSpacing
+        height: units.largeSpacing
+        cursorShape: Qt.WhatsThisCursor
+        
+        PlasmaCore.ToolTipArea {
+            anchors.fill: parent
+            icon: "help-hint"
+            mainText: i18n("Resize?")
+            subText: i18n("Alt + Right Click to resize the menu.")
+        }
+    }
+    
+    MouseArea {
+        visible: !plasmoid.configuration.tilesLocked && !(plasmoid.location == PlasmaCore.Types.BottomEdge || plasmoid.location == PlasmaCore.Types.LeftEdge)
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        width: units.largeSpacing
+        height: units.largeSpacing
+        cursorShape: Qt.WhatsThisCursor
+        
+        PlasmaCore.ToolTipArea {
+            anchors.fill: parent
+            icon: "help-hint"
+            mainText: i18n("Resize?")
+            subText: i18n("Alt + Right Click to resize the menu.")
+        }
+    }
+	
+	
+	onWidthChanged: {
+        // console.log('popup.size', width, height, 'width')
+        resizeWidth.restart()
+    }
+    onHeightChanged: {
+        // console.log('popup.size', width, height, 'height')
+        resizeHeight.restart()
+    }
+    Timer {
+        id: resizeHeight
+        interval: 200
+        onTriggered: {
+            if (!plasmoid.configuration.fullscreen) {
+                plasmoid.configuration.popupHeight = height / units.devicePixelRatio
+            }
+        }
+    }
+    Timer {
+        id: resizeWidth
+        interval: 200
+        onTriggered: {
+            if (!plasmoid.configuration.fullscreen) {
+                plasmoid.configuration.popupWidth = width / units.devicePixelRatio
+            }
+        }
+    }
 }

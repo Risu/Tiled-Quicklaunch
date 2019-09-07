@@ -273,7 +273,7 @@ Item {
 			var recentAppList = [];
 
 			//--- populate
-			var model = rootModel.modelForRow(0)
+			/*var model = rootModel.modelForRow(0)
 			if (model) {
 				parseModel(recentAppList, model)
 			} else {
@@ -297,12 +297,13 @@ Item {
 			for (var i = 0; i < recentAppList.length; i++) {
 				var item = recentAppList[i];
 				item.sectionKey = recentAppsSectionKey
-			}
+			}*/
 
 			return recentAppList;
 		}
 
 		function refreshRecentApps() {
+            /*
 			// console.log('refreshRecentApps')
 			if (debouncedRefresh.running) {
 				// We're about to do a full refresh so don't bother doing a partial update.
@@ -325,20 +326,20 @@ Item {
 			} else {
 				// We'll be removing items, so just replace the entire list.
 				refresh()
-			}
+			}*/
 		}
 
 		property int categoryStartIndex: 2 // Skip Recent Apps, All Apps
 		property int categoryEndIndex: rootModel.count - 1 // Skip Power
 
 		function getCategory(rootIndex) {
-			var modelIndex = rootModel.index(rootIndex, 0)
+			/*var modelIndex = rootModel.index(rootIndex, 0)
 			var categoryLabel = rootModel.data(modelIndex, Qt.DisplayRole)
 			var categoryIcon = rootModel.data(modelIndex, Qt.DecorationRole)
 			// console.log('categoryLabel', categoryLabel, categoryIcon)
-			var categoryModel = rootModel.modelForRow(rootIndex)
+			var categoryModel = rootModel.modelForRow(rootIndex)*/
 			var appList = []
-			if (categoryModel) {
+			/*if (categoryModel) {
 				parseModel(appList, categoryModel)
 			} else {
 				console.log('allAppsModel.getCategory', rootIndex, categoryModel, 'is null')
@@ -348,21 +349,23 @@ Item {
 				var item = appList[i];
 				item.sectionKey = categoryLabel
 				item.sectionIcon = categoryIcon
-			}
+			}*/
 			return appList
 		}
 		function getAllCategories() {
 			var appList = [];
+            /*
 			for (var i = categoryStartIndex; i < categoryEndIndex; i++) { // Skip Recent Apps, All Apps, ... and Power
 			// for (var i = 0; i < rootModel.count; i++) {
 				appList = appList.concat(getCategory(i))
-			}
+			}*/
 			return appList
 		}
 
 		function getAllApps() {
 			//--- populate list
 			var appList = [];
+            /*
 			var model = rootModel.modelForRow(1)
 			if (model) {
 				parseModel(appList, model)
@@ -427,12 +430,13 @@ Item {
 					return 0;
 				}
 			})
-
+            */
 
 			return appList
 		}
 
 		function refresh() {
+            /*
 			refreshing()
 			logger.debug("allAppsModel.refresh().star", Date.now())
 			
@@ -480,7 +484,7 @@ Item {
 			// }
 
 			logger.debug("allAppsModel.refresh().done", Date.now())
-			refreshed()
+			refreshed()*/
 		}
 	}
 

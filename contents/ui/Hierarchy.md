@@ -1,13 +1,6 @@
 Main
-	SearchModel
-		SearchResultsModel
 	LauncherIcon
 	Popup
-		SearchView
-			SidebarView
-			SearchResultsView
-				SearchResultsList
-			SearchField
 		TileGrid
 
 
