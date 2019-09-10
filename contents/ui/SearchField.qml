@@ -99,6 +99,7 @@ TextField {
 			event.accepted = true; search.filters = ['shell']
 		} else if (event.key == Qt.Key_Escape) {
 			plasmoid.expanded = false
+			popup.visible = false
 		}
 	}
 

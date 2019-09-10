@@ -12,6 +12,7 @@ Kicker.FavoritesModel {
 		var closeRequested = kickerAppModel.trigger(index, "", null)
 		if (closeRequested) {
 			plasmoid.expanded = false
+			popup.visible = false
 		}
 	}
 
@@ -20,6 +21,7 @@ Kicker.FavoritesModel {
 		var closeRequested = kickerAppModel.trigger(index, actionId, actionArgument)
 		if (closeRequested) {
 			plasmoid.expanded = false
+			popup.visible = false
 		}
 	}
 

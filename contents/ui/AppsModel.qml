@@ -221,6 +221,7 @@ Item {
 		onItemTriggered: {
 			// console.log('powerActionsModel.onItemTriggered')
 			plasmoid.expanded = false
+			popup.visible = false
 		}
 		
 		function nameByIconName(iconName) {
@@ -245,6 +246,7 @@ Item {
 		onItemTriggered: {
 			// console.log('sessionActionsModel.onItemTriggered')
 			plasmoid.expanded = false
+			popup.visible = false
 		}
 
 		function parseSourceModel(powerActionsModel) {
@@ -267,6 +269,7 @@ Item {
 		onItemTriggered: {
 			// console.log('allAppsModel.onItemTriggered')
 			plasmoid.expanded = false
+			popup.visible = false
 		}
 
 		function getRecentApps() {
