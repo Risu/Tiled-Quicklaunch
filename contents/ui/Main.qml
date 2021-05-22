@@ -74,14 +74,14 @@ Item {
 
 	Plasmoid.hideOnWindowDeactivate: !plasmoid.userConfiguring
 	property bool expanded: plasmoid.expanded
-    onExpandedChanged: {
-        popup.visible = !popup.visible
-    }
-    
-    Plasmoid.fullRepresentation: PlasmaCore.Dialog {
-        visible: false
-    }
-    
+	onExpandedChanged: {
+		popup.visible = !popup.visible
+	}
+	
+	Plasmoid.fullRepresentation: PlasmaCore.Dialog {
+		visible: false
+	}
+	
 	// width: popup.width
 	// height: popup.height
 	PlasmaCore.Dialog {
