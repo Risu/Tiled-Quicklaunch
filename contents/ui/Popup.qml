@@ -137,10 +137,19 @@ MouseArea {
         // console.log('popup.size', width, height, 'width')
         resizeWidth.restart()
     }
+    
     onHeightChanged: {
         // console.log('popup.size', width, height, 'height')
         resizeHeight.restart()
     }
+    
+	Keys.onPressed: {
+		if (event.key == Qt.Key_Escape) {
+			plasmoid.expanded = false
+			popup.visible = false
+		}
+	}
+	
     Timer {
         id: resizeHeight
         interval: 200
@@ -150,6 +159,7 @@ MouseArea {
             }
         }
     }
+    
     Timer {
         id: resizeWidth
         interval: 200
@@ -159,4 +169,9 @@ MouseArea {
             }
         }
     }
+    
+	Component.onCompleted: {
+		forceActiveFocus()
+	}
+	
 }
