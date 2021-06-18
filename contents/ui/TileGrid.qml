@@ -442,13 +442,16 @@ DragAndDrop.DropArea {
 
 					MouseArea {
 						anchors.fill: parent
-						acceptedButtons: Qt.RightButton
+						acceptedButtons: Qt.LeftButton | Qt.RightButton
 						onClicked: {
 							if (mouse.button == Qt.RightButton) {
 								cellContextMenu.cellX = cellItem.modelX
 								cellContextMenu.cellY = cellItem.modelY
 								var pos = mapToItem(scrollItem, mouse.x, mouse.y) // cellContextMenu is a child of scrollItem
 								cellContextMenu.open(pos.x, pos.y)
+							} else if (plasmoid.configuration.popupDismissOnLeftClick && mouse.button == Qt.LeftButton) {
+								plasmoid.expanded = false
+								popup.visible = false
 							}
 						}
 
