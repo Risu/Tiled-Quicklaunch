@@ -23,7 +23,7 @@ ColumnLayout {
 		}
 
 		property var ignoredKeys: [
-			'tileScale',
+			//'tileScale',
 			'searchResultsReversed',
 			'searchResultsCustomSort',
 		]

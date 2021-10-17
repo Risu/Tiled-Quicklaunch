@@ -16,6 +16,9 @@ Item {
 	readonly property int sidebarMinOpenWidth: 200 * units.devicePixelRatio
 	readonly property int sidebarRightMargin: 4 * units.devicePixelRatio
 	readonly property int appListWidth: plasmoid.configuration.appListWidth * units.devicePixelRatio
+	
+	readonly property int newTileW: 2
+	readonly property int newTileH: 2
 
 	property bool showSearch: false
 	readonly property int appAreaWidth: (showSearch ? appListWidth : 0)
@@ -24,6 +27,7 @@ Item {
 	readonly property real tileScale: plasmoid.configuration.tileScale
 	readonly property int cellBoxUnits: 80
 	readonly property int cellMarginUnits: plasmoid.configuration.tileMargin
+	readonly property int hoverOutlineSize: plasmoid.configuration.hoverOutlineSize
 	readonly property int cellSizeUnits: cellBoxUnits - cellMarginUnits*2
 	readonly property int cellSize: cellSizeUnits * tileScale * units.devicePixelRatio
 	readonly property real cellMargin: cellMarginUnits * tileScale * units.devicePixelRatio

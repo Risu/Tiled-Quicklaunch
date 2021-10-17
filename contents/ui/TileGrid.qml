@@ -20,7 +20,7 @@ DragAndDrop.DropArea {
 	property real cellMargin: 3 * units.devicePixelRatio
 	property real cellPushedMargin: 6 * units.devicePixelRatio
 	property int cellBoxSize: cellMargin + cellSize + cellMargin
-	property int hoverOutlineSize: 2 * units.devicePixelRatio
+	property int hoverOutlineSize: plasmoid.configuration.hoverOutlineSize * units.devicePixelRatio
 
 	property int minColumns: Math.floor(width / cellBoxSize)
 	property int minRows: Math.floor(height / cellBoxSize)
@@ -573,8 +573,8 @@ DragAndDrop.DropArea {
 		return {
 			"x": 0,
 			"y": 0,
-			"w": 2,
-			"h": 2,
+			"w": plasmoid.configuration.newTileW,
+			"h": plasmoid.configuration.newTileH,
 			"url": url,
 		}
 	}
