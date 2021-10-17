@@ -54,6 +54,15 @@
 		<entry name="tileMargin" type="double">
 			<default>5</default>
 		</entry>
+		<entry name="newTileW" type="int">
+			<default>2</default>
+		</entry>
+		<entry name="newTileH" type="int">
+			<default>2</default>
+		</entry>
+		<entry name="hoverOutlineSize" type="int">
+			<default>2</default>
+		</entry>
 		<entry name="tilesLocked" type="bool">
 			<default>false</default>
 		</entry>
